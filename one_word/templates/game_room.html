@@ -16,7 +16,7 @@
         <!-- <h1 class="title">Tales of the Seven NineTales</h1> -->
           <div class="messages">
               {% for value in room.messages %}
-                <span id="{{value.user_id}}" class="message">{{value.message}}</span>
+                <span id="{{value.user_id}}" class="message" style="font-size:24px;">{{value.message}}</span>
               {% endfor %}
           </div>
         <div class="message-container"><input class="message-input" onkeyup="enterMessage('{{room.id}}','{{room.code}}','{{current_user.id}}')"><button class="message-button" onclick="sendMessage('{{room.id}}','{{room.code}}','{{current_user.id}}')">Send</button></div>

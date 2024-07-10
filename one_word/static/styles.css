@@ -1,0 +1,267 @@
+a {text-decoration: none;color:black;}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FEFAF6;
+    line-height: 1.7;
+   }
+   /*Home page*/
+   section {
+    padding: 20px 20px;
+   }
+   .landing {
+       text-align: center;
+       padding:150px 0px;
+       display: flex;
+       justify-content: center;
+      }
+      .landing-container{
+        min-width: 400px;
+     max-width:800px;
+
+   }
+   .button {
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: #405D72;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 20px;
+   }
+   
+   h1 {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 20px;
+   }
+   nav {
+    display: flex;
+    justify-content: center;
+    gap:5%;
+    padding:20px;
+    background-color: #405D72;
+ }
+ nav a{
+  color:white;
+ }
+   p {
+    color: #758694; 
+    font-size: 18px;   
+   }
+   .how-it-works {
+       display: flex;
+       justify-content: space-between;
+       text-align: start;
+   }
+   
+   .how-it-works > div {
+       width: 50%;
+       padding: 0 100px 0 0;
+   }
+   
+   .how-it-works h2 {
+       font-weight: bold;
+       font-size: 28px;
+   }
+   
+   .how-it-works h3 {
+       font-weight: bold;
+       font-size: 20px;
+   }
+   /*Game ROom*/
+   .content-container {
+       display: flex;
+       justify-content: space-between;
+       min-height: 800px;
+       padding: 50px;
+   }
+   
+   .fat-box {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    background-color: #405D72;
+    box-shadow: 0 0 10px rgba(189, 189, 189, 0.7);
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    min-width: 500px;
+    height:800px;
+    margin:0px 20px 0px 0px;
+   }
+   .fat-box-info{text-align:center;}
+   .fat-box-info h3{margin:0;}
+   .messages{
+    flex-grow:1;
+    margin:0px 0px 20px 0px;
+    overflow-y: auto;
+   }
+   .message-input { border:none; border-radius: 25px;height:30px;padding:5px 10px;width:100%;}
+   .message-button {background-color: #405D72;color:white; position:absolute;right:-15px;top:5px; border:none; border-radius: 25px;height:30px;padding:5px 10px;}
+   .message-container {position:relative;}
+   .small-boxes {
+       display: flex;
+       flex-direction: column;
+       text-align: center;
+       width: 35%;
+   }
+   .member{display:flex;align-items:center;margin:20px 10px;padding:5px;}
+   .member:hover{background-color: #405D72;border-radius: 15px;color:white;}
+    .member-icon{width:50px;border-radius:25px;margin:0px 40px 0px 0px}
+   .small-box {
+       background-color: #ffffff;
+       box-shadow: 0 0 10px rgba(184, 184, 184, 0.7);
+       color: #405D72;
+       padding: 10px;
+       border-radius: 20px;
+       margin-bottom: 16px;
+       min-width: 300px;
+   }
+   .small-box:first-child {
+    height:500px;
+   }
+   .small-box:last-child {
+       margin-bottom: 0;
+   }
+   .small-box p {font-size:16px;}
+   /*Create ROoms*/
+   .chatroom-container {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+   .chatroom-inner-container {
+       min-width: 400px; /* adjust the width as needed */
+       max-width: 800px;
+       background-color: #f9f9f9; /* add a light gray background */
+       padding: 20px;
+       border: 1px solid #ddd; /* add a light gray border */
+       border-radius: 10px; /* add a slight rounded corner */
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a subtle shadow */
+   }
+   .chatroom-inner-container h1 { text-align: center;}
+   /* Input field styling */
+   .search-input {
+       width: 100%;
+       padding: 10px;
+       border: 1px solid lightgray;
+       border-radius: 25px;
+       box-sizing: border-box;
+       background-image: url('data:image/jpeg;base64,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'); /* Placeholder for the icon URL */
+       background-position: right 10px center;
+       background-repeat: no-repeat;
+       background-size: 20px; /* Size of the icon */
+   }
+   
+   /* Style placeholder text */
+   .search-input::placeholder {
+       color: lightgray;
+   }
+   .room-inner-container {
+       background-color: #fff; /* White background */
+       border: 1px solid #f0f0f0; /* Very light gray border */
+       border-radius: 15px; /* Rounded corners */
+       padding: 20px;
+       margin-top: 20px; /* Spacing from the search bar */
+       display: flex;
+       flex-direction: column;
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for depth */
+   }
+   
+   .room-inner-container h2 {
+       margin: 0px; /* Remove top margin from h2 for tighter spacing */
+   }
+   .room-inner-container h3 {
+    margin:0px;
+   }
+   
+   .room-inner-container p {
+    font-size:16px;
+       color: #666; /* Optional: Dark gray text for the paragraph for better readability */
+   }
+   .create-button {
+       background-color: #fff; /* White background */
+       color: #666; /* Light grey text */
+       border: 1px solid #ccc; /* Light grey border */
+       border-radius: 25px; /* Rounded corners */
+       padding: 10px 20px;
+       font-size: 16px;
+       cursor: pointer;
+       margin-top: 15px; /* Spacing from the inner container */
+       transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+   }
+   
+   .create-button:hover {
+       background-color: #f7f7f7; /* Slightly darker background on hover */
+       color: #555; /* Darker text on hover */
+   }
+   
+   /* sign up */
+   /*errors */
+   .info{background-color: rgb(246, 255, 127);border-radius: 15px;padding:10px 20px;text-align: center;}
+   .danger {color:red;margin:0px 0px 20px 0px;}
+   .success {background-color: rgb(175, 255, 175);border-radius: 15px;padding:10px 20px;text-align: center;}
+   .input-container {display: flex;flex-direction: column;}
+   .signup-section {
+   
+     padding: 50px;
+   }
+   .signup-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+   .signup-form {
+     min-width: 400px;
+     max-width: 700px;
+   }
+   .signup-input {
+     padding: 10px;
+     margin-bottom: 10px;
+     border: 1px solid #f0f0f0;
+     border-radius: 5px;
+   }
+   .signup-checkbox {
+     vertical-align: middle;
+     margin-right: 10px;
+   }
+   .signup-button {
+     padding: 10px 100px;
+     background-color: #405D72;
+     color: white;
+     border: none;
+     border-radius: 15px;
+     cursor: pointer;
+   }
+   .signup-social-button:first-child{margin:0px 20px 0px 0px;}
+   .signup-or {
+     margin-top: 20px;
+   }
+   .signup-social-container {
+     display: flex;
+     align-items: center;
+   }
+   .signup-social-button {
+     align-items: center;
+     display: flex;
+     padding: 10px 20px;
+     background-color: #fff;
+     border: 1px solid #405D72;
+     border-radius: 8px;
+     cursor: pointer;
+   }
+   .signup-social-icon {
+     width: 20px;
+     height: 20px;
+     margin-right: 8px;
+   }
+   .signup-account {
+     margin-top: 20px;
+   }
+   .signup-link {
+     color: #405D72;
+   }

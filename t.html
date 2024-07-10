@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Rooms</title>
+    <style>
+        .messaging-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Full viewport height */
+            border: 1px solid #ccc;
+          }
+          
+          .messages {
+            flex: 1; /* Take up all available space except for the input area */
+            padding: 10px;
+            overflow-y: auto; /* Scroll if messages overflow */
+            background-color: #f9f9f9;
+          }
+          
+          .message {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+          }
+          
+          .message.received {
+            background-color: #e0e0e0;
+            align-self: flex-start; /* Align to the left */
+          }
+          
+          .message.sent {
+            background-color: #405D72;
+            color: white;
+            align-self: flex-end; /* Align to the right */
+          }
+          
+          .message-input-container {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            background-color: #fff;
+          }
+          
+          .message-input {
+            flex: 1; /* Take up all available space except for the button */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+          
+          .send-button {
+            padding: 10px 20px;
+            background-color: #405D72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+          }
+          
+    </style>
+</head>
+<body>
+    <div class="messaging-container">
+        <div class="messages">
+          <!-- Messages will go here -->
+          <div class="message received">Hello!</div>
+          <div class="message sent">Hi there!</div>
+          <!-- Add more messages as needed -->
+        </div>
+        <div class="message-input-container">
+          <input type="text" class="message-input" placeholder="Type a message...">
+          <button class="send-button">Send</button>
+        </div>
+      </div>
+</body>
+</html>

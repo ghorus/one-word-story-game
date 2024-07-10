@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block content %}        
+<section class="landing">
+   <div class="landing-container">
+     <div style="padding:10px;"><small>Currently {{users | length }} players</small></div>
+     <a href="#" class="button">Beta Version</a>
+      <h1>The One-Word Story Online Game</h1>
+      <p>One person says a single word to begin a story. The next person says another 
+       word, then the next person says another word, and so on, in circles, within the 
+       group. The object is to tell a coherent story, one word at a time.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/nPN6OHBIcsc?si=1tTwGl06mIxEhu9P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   </div>
+ </section>
+
+ <section>
+   <div class="how-it-works">
+       <div style="min-width:550px;">
+           <h2>How it Works</h2>
+           <h3>Sign Up/Login</h3>
+           <p>Create an account or log in to play! No need to download anything.</p>
+           <h3>Find/Join Rooms</h3>
+           <p>Browse through available rooms or create your own to invite friends, family, and other players to join in the fun.</p>
+           <h3>Post Stories</h3>
+           <p>Share your creative story with the community and explore others' tales. Discover new perspectives and engage in meaningful storytelling experiences.</p>
+           {% if current_user.is_authenticated %}
+           <a href="{{url_for('game.room_lobby')}}" class="button">Play</a>
+           {% else %}
+           <a href="{{url_for('users.signup')}}" class="button">Sign up & Play</a>
+            
+           {% endif %}
+       </div>
+       <img src="{{url_for('static', filename='chatroom.png')}}" alt="Interactive storytelling session with multiple participants engaging." style="width: 50%; height: 100%;">
+   </div>
+ </section>
+{% endblock %}
+

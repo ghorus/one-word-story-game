@@ -1,0 +1,56 @@
+{% extends 'socket_layout.html' %}
+{% block content %}    
+<section>
+  <div class="content-container">
+      <!-- Left Fat Box -->
+      <div class="fat-box">
+        <div class="fat-box-info">
+            <small>Room #{{room.code}}</small>
+            {% for member in room.members %}
+              {% if member.id == room.turn %}  
+                <h3><i class="member-turn">{{member.username}}'s turn!</i></h3>
+              {% else %}
+              {% endif %}
+            {% endfor %}
+        </div>
+        <h1 class="title">Tales of the Seven NineTales</h1>
+          <div class="messages">
+              {% for value in room.messages %}
+                <span id="{{value.user_id}}" class="message">{{value.message}}</span>
+              {% endfor %}
+          </div>
+        <div class="message-container"><input class="message-input" onkeyup="enterMessage('{{room.id}}','{{room.code}}','{{current_user.id}}')"><button class="message-button" onclick="sendMessage('{{room.id}}','{{room.code}}','{{current_user.id}}')">Send</button></div>
+      </div>
+      <!-- Right Two Small Boxes -->
+      <div class="small-boxes">
+          <div class="small-box">
+              <h2>Group</h2>
+            {% for member in room.members %}
+              {% if member.id == room.host %}
+                <div class="member" id="{{member.id}}" onmouseover="highlight()">
+                  <!-- <img src="{{url_for('static', filename='profile.png')}}" alt="Group member photo icon" class="member-icon"> -->
+                  <span>{{member.username}} &lpar;Host&rpar;</span>
+                </div>
+              {%else%}
+                <div class="member" id="{{member.id}}" onmouseover="highlight()">
+                  <!-- <img src="{{url_for('static', filename='profile.png')}}" alt="Group member photo icon" class="member-icon"> -->
+                  <span>{{member.username}}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="small-box">
+            <h2>Voting Calls</h2>
+            <small>Coming soon...</small>
+            <p>Kick a Member</p>
+            <p>Create a Title</p>
+            <p>Start a New Paragraph</p>
+            <p>Nudge a Player</p>
+            <small>Use:</small>
+            <a href="{{url_for('game.submit_story', room_id=room.id)}}"><p>Submit Story</p></a>
+            <a onclick="leaveRoom('{{current_user.id}}')"><p>Leave Room</p></a> 
+          </div>
+      </div>
+  </div>
+</section>
+{% endblock %}

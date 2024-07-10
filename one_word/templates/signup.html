@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+{% block content %}  
+<section class="signup-section">
+  <div class="signup-container">
+    <h2>Write Stories Now.</h2>
+      <form class="signup-form" method="POST" action="" novalidate>
+          {{form.hidden_tag()}}
+          
+          <div class="input-container">
+            {{form.username.label}}
+            {{form.username(class_='signup-input')}}
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                    <small class="danger">{{error}}</small>
+                {% endfor %}
+            {% endif %}
+          </div>
+          
+          <div class="input-container">
+            {{form.email.label}}
+            {{form.email(class_='signup-input')}}
+            {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                    <small class="danger">{{error}}</small> 
+                {% endfor %}
+            {% endif %}
+          </div>
+          
+          <div class="input-container">
+            {{form.password.label}}
+            {{form.password(class_='signup-input')}}
+            {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                        <small class="danger">{{error}}</small>
+                    {% endfor %}
+                {% endif %}
+          </div>
+          <div class="input-container">
+            {{form.confirm_password.label}}
+            {{form.confirm_password(class_='signup-input')}}
+            {% if form.confirm_password.errors %}
+                {% for error in form.confirm_password.errors %}
+                    <small class="danger">{{error}}</small>
+                {% endfor %}
+            {% endif %}
+          </div>
+          
+          {{form.submit(class_='signup-button')}}
+      </form>
+    <p class="signup-or">Or</p>
+    <div class="signup-social-container">
+      <button class="signup-social-button">
+        <img src="{{url_for('static', filename='google.png')}}" alt="Google" class="signup-social-icon">
+        Sign in with Google
+      </button>
+      <button class="signup-social-button">
+        <img src="{{url_for('static', filename='apple.png')}}" alt="Apple" class="signup-social-icon">
+        Sign in with Apple
+      </button>
+    </div>
+    <p class="signup-account">Have an account? <a href="#" class="signup-link">Sign in</a></p>
+  </div>
+</section>
+<div class="signup-container">
+  
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'socket_layout.html' %}
+{% block content %}
+<section  class="chatroom-container">
+    <div class="chatroom-inner-container">
+        <h1>Chat Rooms</h1>
+        <input type="search" class="search-input" placeholder="Search for rooms...">
+         <!-- New container -->
+        <div class="room-inner-container">
+            <h2>Create Chat Room</h2>
+            <p>Begin an exciting story adventure of your own.</p>
+            {% if current_user.is_authenticated %}    
+                <a onclick="createRoom()"><button class="create-button">CREATE NOW</button></a>
+            {% else %}
+                <a href="{{url_for('users.login')}}"><button class='create-button'>SIGN IN TO CREATE NOW</button></a>
+            {% endif %}
+        </div>
+        {% for room in rooms %}    
+        <div class="room-inner-container">
+            <h2>
+                <!--Put title here in future-->
+                Members:
+                {% for member in room.members %}
+                    {{member.username}}
+                {% endfor %}
+            </h2>
+            <h4>ROOM {{room.code}} ({{room.members|length}} members)</h4>
+            <p>
+                {% if room.messages | length < 45 %}
+                    {% for message in room.messages %}
+                        {{message.message}}
+                    {% endfor %}
+                {% else %}
+                    {% for message in range(45) %}
+                        {{message.message}}
+                    {% endfor %}...
+                {% endif %}
+            </p>
+            {% if current_user.is_authenticated %}
+                
+            <a onclick="joinRoom('{{ room.code }}') "><button class="create-button">JOIN</button></a>
+            {% else %}                
+            <a href="{{url_for('users.login')}}"><button class="create-button">SIGN IN TO JOIN</button></a>
+            {% endif %}
+
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

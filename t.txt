@@ -1,0 +1,12 @@
+
+href="{{url_for('game.join_room', chatroom_code=room.code)}}"
+<!-- <a href="{{url_for('game.delete_room', room_id = room.id)}}"><p>Delete Room</p></a> -->
+            <a href="{{url_for('game.leave')}}">Leave</a>
+                      <a href="{{ url_for('game.send_message', room_id=room.id, room_code=room.code) }}">message</a>
+
+
+
+
+
+                      
+<a href="{{url_for('game.join_room', chatroom_code=room.code)}}"><button class="create-button">JOIN</button></a>

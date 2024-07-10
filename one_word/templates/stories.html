@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+<section  class="chatroom-container">
+    <div class="chatroom-inner-container">
+        <h1>Stories</h1>
+        <input type="search" class="search-input" placeholder="Search for rooms...">
+         <!-- New container -->
+        {% for a_story in stories %}    
+        <div class="room-inner-container">
+            <h2>
+            </h2>
+            <h4>{{a_story.authors}}</h4>
+            <p>
+                {{a_story.story}}
+              
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

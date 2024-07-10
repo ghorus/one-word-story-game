@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>  
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width" />
+   <title>Landing Page</title>
+   <!--google font-->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!--socket cdn-->
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+<!--css-->
+<link href="{{url_for('static', filename='styles.css')}}" rel="stylesheet">
+<!--socket.js-->
+</head>
+ <body> 
+    <nav>
+        <a>Rate</a>
+        <a>Read</a>
+        <a href="{{url_for('main.home')}}">Home</a>
+        <a href="{{url_for('game.room_lobby')}}">Play</a>
+        {% if current_user.is_authenticated %}
+            
+        <a href="{{url_for('users.logout')}}">Log Out</a>
+        {% else %}
+            
+        <a href="{{url_for('users.signup')}}">Signup</a>
+        <a href="{{url_for('users.login')}}">Login</a>
+        {% endif %}
+ 
+    </nav>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+               {% if messages %}
+                   {% for category, message in messages %}
+                       <div style="padding:5px;margin:10px;"><small class={{category}}>{{message}}</small></div>
+                   {% endfor %}
+               {% endif %}
+           {% endwith %}
+           <style>
+               .socket-broadcast {padding:5px;margin:10px;position:fixed; top:7%;left:5%;}
+           </style>
+           <div class="socket-broadcast"><small></small></div>
+    {% block content %}
+    {% endblock %}
+    <script src="{{url_for('static', filename='socket.js')}}" defer></script>
+</body>
+</html>
